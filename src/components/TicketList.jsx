@@ -3,24 +3,26 @@ import Ticket from './Ticket';
 import PropTypes from 'prop-types';
 
 function TicketList(props){
-  console.log(props.ticketList);
   return (
     <div>
       <hr/>
-      {props.ticketList.map((ticket, index) =>
+      {props.ticketList.map((ticket) =>
         <Ticket names={ticket.names}
           location={ticket.location}
           issue={ticket.issue}
-          timeOpen={ticket.timeOpen}
-          formattedWaitTime = {ticket.formattedWaitTime}
-          key={ticket.id} />
+          formattedWaitTime={ticket.formattedWaitTime}
+          currentRouterPath={props.currentRouterPath}
+          key={ticket.id}
+          onTicketSelection={props.onTicketSelection}/>
       )}
     </div>
   );
 }
 
 TicketList.propTypes = {
-  ticketList: PropTypes.array
+  ticketList: PropTypes.array,
+  currentRouterPath: PropTypes.string,
+  onTicketSelection: PropTypes.func
 };
 
 export default TicketList;
