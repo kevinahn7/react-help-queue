@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/kevinahn7/react-help-queue#readme",
   "dependencies": {
+    "firebase": "^5.5.1",
     "moment": "^2.18.1",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
